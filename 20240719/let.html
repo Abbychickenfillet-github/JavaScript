@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+<body>
+    
+    <script>
+        // let 不允許重複定義變數
+        // let num1=10;
+        // console.log(num1);
+        // let num1=20;
+        // console.log(num1);
+
+        // let name; let 沒有變數提升
+        // console.log(name);
+        // let name="Jack"
+        // console.log(name);
+
+        // 全域變數
+        let a=10;
+        {
+            // 區塊作用域
+            let b=20;
+            // 區域變數
+            console.log(b);
+        }
+
+        function test(){
+            let c=30;
+        }
+
+        console.log(a);
+        // console.log(b);
+        console.log(c);
+    </script>
+</body>
+</html>

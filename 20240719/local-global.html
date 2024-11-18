@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Global Var</title>
+</head>
+<body>
+    
+    <script>
+        let name="Jack";
+
+        function callName(){
+            let name="May";
+            console.log(`Local name: ${name}`);
+            console.log("--callName end--");
+        }
+
+        function callName2(){
+            console.log(`Global name: ${name}`);
+            name="Sam";
+            console.log(`Global name: ${name}`);
+            console.log("--callName2 end--");
+        }
+
+        function callName3(){
+            name2="James" //全域變數 var 
+            console.log(name2);
+            console.log("--callName3 end--");
+        }
+
+        console.log(`Global name: ${name}`);
+        callName();
+        console.log(`Global name: ${name}`);
+        callName2();
+        console.log(`Global name: ${name}`);
+        // console.log(`Global name2: ${name2}`);
+        callName3()
+        console.log(`Global name2: ${name2}`);
+
+
+    </script>
+</body>
+</html>

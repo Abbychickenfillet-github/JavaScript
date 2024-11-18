@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    
+    <script>
+        //可迭代物件
+        let string="Hello World World"
+        console.log("--toUpperCase--");
+        console.log(string.toUpperCase());
+        console.log("--toLowerCase--");
+        console.log(string.toLowerCase());
+        console.log("--charAt--");
+        console.log(string.charAt(2));
+        console.log("--indexOf--");
+        console.log(string.indexOf("Wo"));
+        console.log(string.indexOf("aa"));
+        console.log("--lastIndexOf--");
+        console.log(string.lastIndexOf("Wo"));
+        console.log("--substring--");
+        console.log(string.substring(2,6));
+        console.log("--split--");
+        let stringArr=string.split(" ")
+        console.log(stringArr);
+        console.log("--trim--");
+        let string2="jack@test.com ";
+        console.log(string2.trim());
+        console.log("--replace--");
+        // 要全部換掉需要用正規表達式
+        let newString=string.replace("World", "Kitty")
+        console.log(newString);
+
+
+
+    </script>
+</body>
+</html>

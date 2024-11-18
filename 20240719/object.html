@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+
+    <script>
+        // let user={}
+        // console.log(user);
+        // user.name="Jack"
+        // user.height=175;
+        // console.log(user);
+        // console.log(user.height); 
+
+        let user = {
+            // key: value
+            name: "Ken",
+            height: 175,
+            weight: 63,
+            activated: true,
+            age: 20,
+            favorite: {
+                fruit: ["apple", "banana"],
+                movies: ["Avengers", "Lion King"]
+            },
+            sayHello: function () {
+                // console.log(`Hello, I'm ${user.name}.`);
+                console.log(`Hello, I'm ${this.name}.`);
+            },
+            countBMI() { // countBMI: function(){
+                let height = this.height / 100;
+                let bmi = this.weight / (height * height);
+                console.log(`${this.name}'s BMI is ${bmi}.`);
+                if (bmi < 18.5) {
+                    console.log("過輕");
+                } else if (bmi < 24) {
+                    console.log("正常");
+                } else if (bmi < 27) {
+                    console.log("過重");
+                } else if (bmi < 30) {
+                    console.log("輕度肥胖");
+                } else if (bmi < 35) {
+                    console.log("中度肥胖");
+                } else {
+                    console.log("重度肥胖");
+                }
+            }
+        }
+
+        console.log(user);
+        console.log(user.favorite.fruit);
+        console.log(user["favorite"].fruit);
+        console.log(user["favorite"]["fruit"]);
+        // console.log(user.height);
+        console.log(`${user.name}'s height is ${user.height}cm, weight is ${user.weight}kg.`);
+        user.sayHello()
+        user.countBMI()
+        delete user.age;
+        console.log(user);
+
+
+
+    </script>
+</body>
+
+</html>

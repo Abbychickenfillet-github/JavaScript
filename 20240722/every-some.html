@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>every, some</title>
+</head>
+<body>
+    
+    <script>
+        let numbers1=[12, 5, 8, 130, 44];
+        let numbers2=[2, 5, 8, 1, 4];
+
+
+        let bigThan10=function(number){
+            return number>=10;
+        }
+
+        // let allBigThan10=numbers1.every(function(number){
+        //     return number>=10;
+        // })
+        console.log("--every--");
+        let allBigThan10=numbers1.every(bigThan10)
+        console.log(allBigThan10);
+        let allBigThan10_2=numbers2.every(bigThan10)
+        console.log(allBigThan10_2);
+
+        console.log("--some--");
+        // let someBigThan10=numbers1.some(function(number){
+        //     return number>=10;
+        // })
+        let someBigThan10=numbers1.some(bigThan10)
+        console.log(someBigThan10);
+        console.log(numbers2.some(bigThan10));
+
+    </script>
+
+</body>
+</html>

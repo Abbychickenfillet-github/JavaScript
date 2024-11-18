@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+    
+    <script>
+        let now=new Date();
+        let weekday=["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        // console.log(now);
+        let year=now.getFullYear();
+        let month=now.getMonth()+1;
+        if(month<10)month="0"+month;
+        // console.log(month);
+        let date=now.getDate();
+
+        let dayIndex=now.getDay();
+        // console.log(dayIndex);
+        let day=weekday[dayIndex];
+
+        let hour=now.getHours();
+        if(hour<10)hour="0"+hour;
+        let minute=now.getMinutes();
+        if(minute<10)minute="0"+minute;
+        let second=now.getSeconds();
+        if(second<10)second="0"+second;
+
+        // console.log(year);
+        // console.log(date);
+        // 2024/07/22(Mon) 15:34:00
+        let time=`${year}/${month}/${date}(${day}) ${hour}:${minute}:${second}`;
+        console.log(time);
+
+    </script>
+
+</body>
+</html>

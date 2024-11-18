@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON.stringfy</title>
+</head>
+<body>
+    
+    <script>
+        let user={
+            name: "Jack",
+            height: 180,
+            weight: 72
+        }
+        console.log(user);
+        console.log(user.name);
+        let userString=JSON.stringify(user);
+        console.log(userString);
+        console.log(userString.name);
+
+        let parseUser=JSON.parse(userString)
+        console.log(parseUser);
+        console.log(parseUser.name);
+    </script>
+</body>
+</html>

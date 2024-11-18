@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call by value, reference</title>
+</head>
+<body>
+    
+    <script>
+        // 傳值, call by value
+        console.log("call by value");
+        let a=10;
+        let b=a;
+        console.log(`a is ${a}`);
+        console.log(`b is ${b}`);
+        a=5;
+        console.log(`a is ${a}`);
+        console.log(`b is ${b}`);
+
+        // 傳址/參考, call by reference
+        // 淺拷貝
+        console.log("call by reference");
+        let c={
+            greeting: "Hi"
+        }
+        let d=c;
+        console.log(c);
+        console.log(d);
+        c.greeting="Hello"
+        console.log(c);
+        console.log(d);
+
+        // 深拷貝
+
+
+
+    </script>
+</body>
+</html>

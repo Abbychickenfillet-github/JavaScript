@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpRep</title>
+</head>
+<body>
+    
+    <script>
+        console.log("--phone--");
+        const rePhone=/^09\d{8}$/
+        const phone1="0922111222"
+        const phone2="09221113333"
+        console.log(rePhone.test(phone1));
+        console.log(rePhone.test(phone2));
+
+        console.log("--ID--");
+        const reID=/^[A-Z]{1}[1-2]{1}[0-9]{8}$/
+        const id1="A123456789";
+        const id2="B22332345"
+        console.log(reID.test(id1));
+        console.log(reID.test(id2));
+
+        console.log("--email--");
+        const reEmail=/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+        const email1="tom@test.com"
+        const email2="tom@test"
+
+        console.log(reEmail.test(email1));
+        console.log(reEmail.test(email2));
+
+
+
+    </script>
+</body>
+</html>

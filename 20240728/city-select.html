@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>city select</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="mb-2">
+                <div class="row g-3">
+                    <div class="col">
+                        <select name="" id="city" class="form-select">
+                            <option value="0">請選擇縣(市)</option>
+                            <option value="1">台北市</option>
+                            <option value="2">新北市</option>
+                            <option value="3">桃園市</option>
+                            <option value="4">台中市</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select name="" id="area" class="form-select">
+                            <option value="0">請選擇鄉鎮縣市</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <input type="text" class="form-control" id="address">
+            </div>
+        </div>
+        <script>
+            const city=document.querySelector("#city")
+            const cities=[
+                {
+                    id: 1,
+                    name: "台北市",
+                    flower: "杜鵑花",
+                    areas:[
+                        {
+                            postCode: 100,
+                            name: "中正區"
+                        },
+                        {
+                            postCode: 103,
+                            name: "大同區"
+                        },
+                        {
+                            postCode: 104,
+                            name: "中山區"
+                        }
+                    ]
+                },
+                {
+                    id:2,
+                    name: "新北市",
+                    flower: "茶花",
+                    areas:[
+                        {
+                            postCode: 220,
+                            name: "板橋區"
+                        },
+                        {
+                            postCode: 221,
+                            name: "汐止區"
+                        },
+                        {
+                            postCode: 222,
+                            name: "深坑區"
+                        }
+                    ]
+                },
+                {
+                    id:3,
+                    name: "桃園市",
+                    flower: "桃花",
+                    areas:[
+                        {
+                            postCode: 320,
+                            name: "中壢區"
+                        },
+                        {
+                            postCode: 324,
+                            name: "平鎮區"
+                        },
+                        {
+                            postCode: 325,
+                            name: "龍潭區"
+                        }
+                    ]
+                },
+                {
+                    id: 4,
+                    name: "台中市",
+                    flower: "山櫻花",
+                    areas:[
+                        {
+                            postCode: 400,
+                            name: "中區"
+                        },
+                        {
+                            postCode: 401,
+                            name: "東區"
+                        },
+                        {
+                            postCode: 402,
+                            name: "南區"
+                        }
+                    ]
+                }
+            ]
+
+            city.addEventListener("change", function(){
+                let cityId=this.value;
+                let cityData=cities.find(function(item){
+                    return item.id==cityId;
+                })
+                console.log(cityData.areas);
+                
+            })
+
+
+        </script>
+    </body>
+</html>

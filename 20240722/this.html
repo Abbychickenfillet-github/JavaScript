@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    
+
+    <script>
+        // var a=10;
+        // this.a=10;
+        window.a=10;
+
+        console.log(a);
+
+        function callName(){
+            console.log(this.a);
+        }
+        callName()
+
+        let user={
+            a: 15,
+            callName(){
+                console.log(this.a);
+            }
+        }
+        user.callName()
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>change pic</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <style>
+            .main-pic{
+                width: 250px;
+                margin-inline: auto;
+                background: #eee;
+                img{
+                    width: 100%;
+                }
+            }
+            .pic-list{
+                li{
+                    width: 84px;
+                    background: #eee;
+                    border: 4px solid transparent;
+                    &.active{
+                        border: 4px solid red;
+                    }
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <figure class="main-pic">
+                <img id="mainPic" class="object-fit-cover" src="/assets/images/1.png" alt="">
+            </figure>
+            <ul class="list-unstyled d-flex gap-2 pic-list justify-content-center" id="picList">
+                <li class="ratio ratio-1x1 active">
+                    <img class="object-fit-cover" src="/assets/images/1.png" alt="">
+                </li>
+                <li class="ratio ratio-1x1">
+                    <img class="object-fit-cover" src="/assets/images/4.png" alt="">
+                </li>
+                <li class="ratio ratio-1x1">
+                    <img class="object-fit-cover" src="/assets/images/7.png" alt="">
+                </li>
+                <li class="ratio ratio-1x1">
+                    <img class="object-fit-cover" src="/assets/images/25.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <script>
+            const mainPic=document.querySelector("#mainPic")
+            const picListItem=document.querySelectorAll("#picList li")
+            // console.log(picListItem);
+
+            for(let i=0; i<picListItem.length; i++){
+                picListItem[i].addEventListener("click", function(){
+                    let img=this.children[0];
+                    mainPic.src=img.src;
+                    for(let j=0; j<picListItem.length; j++){
+                        picListItem[j].classList.remove("active")
+                    }
+                    this.classList.add("active")
+                })
+            }
+        </script>
+    </body>
+</html>

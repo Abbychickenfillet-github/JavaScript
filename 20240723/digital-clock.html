@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background: #000;
+        }
+
+        .clock {
+            color: greenyellow;
+            text-align: center;
+            font-family: "Chivo Mono", monospace;
+            font-optical-sizing: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="clock">
+        0000/00/00(SUN) 00:00:00
+    </h1>
+
+    <script>
+        const clockTimer=document.querySelector(".clock")
+
+        let weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+        function clock() { // let clock=function
+            let now = new Date();
+            let year = now.getFullYear();
+            let month = now.getMonth() + 1;
+            if (month < 10) month = "0" + month;
+            let date = now.getDate();
+
+            let dayIndex = now.getDay();
+            // console.log(dayIndex);
+            let day = weekday[dayIndex];
+
+            let hour = now.getHours();
+            if (hour < 10) hour = "0" + hour;
+            let minute = now.getMinutes();
+            if (minute < 10) minute = "0" + minute;
+            let second = now.getSeconds();
+            if (second < 10) second = "0" + second;
+
+            let time = `${year}/${month}/${date}(${day}) ${hour}:${minute}:${second}`;
+            // console.log(time);
+            clockTimer.textContent=time;
+        }
+        clock();
+
+        setInterval(clock, 1000);
+
+    </script>
+</body>
+
+</html>

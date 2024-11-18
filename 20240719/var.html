@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var</title>
+</head>
+<body>
+    
+    <script>
+        // var 可以重複定義變數
+        // var num1=10;
+        // console.log(num1);
+        // var num1=20;
+        // console.log(num1);
+
+
+        // var name; 
+        // 變數提升
+        // console.log(name);
+        // var name="Jack"
+        // console.log(name);
+
+        var a=10;
+
+        {
+            var b=20;
+        }
+
+        function test(){
+            // var 函式作用域
+            var c=30;
+        }
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+    </script>
+</body>
+</html>

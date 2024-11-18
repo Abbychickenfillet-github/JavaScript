@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind</title>
+</head>
+<body>
+    
+    <script>
+        let objA={
+            name: "A"
+        }
+
+        let objB={
+            name: "B",
+            writeName(age){
+                console.log(`${this.name}'s age is ${age} years old.`);
+            }
+        }
+
+        objB.writeName(20)
+        let func=objB.writeName.bind(objA, 22)
+        func();
+        let func1=objB.writeName.bind(objA);
+        func1(24)
+        func1(18)
+
+    </script>
+</body>
+</html>

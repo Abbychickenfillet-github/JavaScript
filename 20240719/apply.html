@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apply</title>
+</head>
+
+<body>
+    <script>
+        // call
+        function add(a, b) {
+            return a + b;
+        }
+        console.log(add(2, 5));
+        console.log(add.apply(null, [2, 5]));
+
+        // window
+        var person = "Jack"; //window.person
+        var role = "driver"
+        console.log(window.person);
+        console.log(this.person);
+
+
+        function greet() { //window.greet()
+            var reply = [this.person, 'Is An Awesome', this.role].join(' ');
+            console.log(reply);
+        }
+        greet()
+
+        var obj = {
+            person: 'Jimmy Fox',
+            role: 'Javascript Developer'
+        };
+        greet.apply(obj)
+
+
+
+    </script>
+</body>
+
+</html>

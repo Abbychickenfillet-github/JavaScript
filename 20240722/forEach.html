@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+
+<body>
+
+    <script>
+        let people = [
+            {
+                name: 'Jay',
+                like: 'apple',
+                gender: 'male',
+                age: 18,
+                // adult: true
+            },
+            {
+                name: 'Sarah',
+                like: 'banana',
+                gender: 'female',
+                age: 24
+            },
+            {
+                name: 'Tom',
+                like: 'orange',
+                gender: 'male',
+                age: 1
+            },
+            {
+                name: 'Jacy',
+                like: 'orange',
+                gender: 'female',
+                age: 3
+            }
+        ];
+        console.log(people);
+
+        console.log("--forEach--");
+        people.forEach(function (user, index, arr) {
+            // console.log(index);
+            // console.log(user);
+            // console.log(arr);
+            console.log(`${user.name} is ${user.age} years old.`);
+        })
+
+        console.log("--filter--");
+        let adultPeople = people.filter(function (user) {
+            return user.age >= 18;
+        })
+        console.log(adultPeople);
+
+        console.log("--find--");
+        let adultPerson = people.find(function (user) {
+            return user.age >= 18;
+        })
+        console.log(adultPerson);
+
+        let oldPerson = people.find(function (user) {
+            return user.age >= 65;
+        })
+        console.log(oldPerson); //undefined
+
+        console.log("--map--");
+        let scores = [51, 21, 62, 63, 36, 78];
+        let newScores = scores.map(function (score) {
+            return score*2;
+        })
+        console.log(newScores);
+
+        let newScores2=scores.map(function(score){
+            let newScore = Math.round(Math.sqrt(score)*10);
+            return newScore;
+        })
+        console.log(newScores2);
+
+        let peopleLike=people.map(function(user){
+            return `${user.name} likes ${user.like}.`;
+        })
+        console.log(peopleLike);
+
+        let people2=people.map(function(user){
+            let newPerson={}
+            newPerson.name=user.name;
+            newPerson.gender=user.gender;
+            return newPerson;
+        })
+        console.log(people2);
+
+        let people3=people.map(function( user ){
+            // if(user.age>=18){
+            //     user.adult=true;
+            // }else{
+            //     user.adult=false;
+            // }
+            user.adult= user.age>=18 ? true : false;
+            return user;
+        })
+        console.log(people3);
+    </script>
+</body>
+
+</html>

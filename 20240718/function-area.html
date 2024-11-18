@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area</title>
+</head>
+<body>
+    
+    <script>
+
+        function area(width, height){
+            if(typeof width != "number" || typeof height != "number"){
+                return "輸入的值不正確";
+            }
+            if(width<0 || height<0){
+                return "請輸入大於0的值";
+            }
+
+            let area=width * height;
+            return area;
+        }
+
+        let area1=area(10, 12)
+        console.log(area1);
+        let area2=area(2);
+        console.log(area2);
+        let area3=area(2, -2);
+        console.log(area3);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>dom</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-primary" id="button">
+            Button
+        </button>
+
+        <button type="button" class="btn btn-primary" id="button">
+            Button
+        </button>
+        <button type="button" class="btn btn-primary" id="">
+            Button
+        </button>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script>
+        const idButton = document.getElementById("button")
+        const btnButton = document.getElementsByClassName("btn")
+        const buttons=document.getElementsByTagName("button")
+
+        // console.log(idButton);
+        // console.log(btnButton);
+        // console.log(buttons);
+
+        idButton.addEventListener("click", function () {
+            console.log("id click");
+        })
+
+        for (let i = 0; i < btnButton.length; i++) {
+            btnButton[i].addEventListener("click", function () {
+                console.log("class click");
+            })
+        }
+
+        for(let i=0; i<buttons.length; i++){
+            buttons[i].addEventListener("click", function () {
+                console.log("element click");
+            })
+        }
+
+    </script>
+</body>
+
+</html>

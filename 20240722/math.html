@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+</head>
+<body>
+    
+    <script>
+        console.log("--PI--");
+        console.log(Math.PI);
+        console.log("--round--"); //四捨五入
+        let number=123.4567;
+        console.log(Math.round(number));
+        console.log(Math.round(number*100)/100);
+        console.log("--ceil--");
+        console.log(Math.ceil(number));
+        console.log("--floor--");
+        console.log(Math.floor(number));
+        console.log("--pow--");
+        console.log(Math.pow(2, 10));
+        console.log("--abs--");
+        console.log(Math.abs(-20));
+        console.log("--min--");
+        let numbers=[0, 150, 30, 20, -8, -200];
+        console.log(Math.min(0, 150, 30, 20, -8, -200));
+        console.log(Math.min(...numbers)); // ... 展開運算子
+        console.log("--max--");
+        console.log(Math.max(...numbers));
+
+        console.log("--random--");
+        console.log(Math.random());
+        let users=["Jack", "Ann", "May", "Peter", "Sam", "Zoe"];
+        let userLength=users.length;
+        // console.log(Math.random()*userLength);
+        let randomIndex= Math.floor(Math.random()*userLength);
+        console.log(randomIndex);
+        console.log(users[randomIndex]);
+        randomIndex= Math.floor(Math.random()*userLength);
+        console.log(users[randomIndex]);
+
+
+
+    </script>
+</body>
+</html>

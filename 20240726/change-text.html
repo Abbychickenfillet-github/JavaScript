@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <style>
+            h1{
+                font-size: 1.5rem;
+            }
+            .circle{
+                width: 60px;
+                height: 60px;
+                background: #ccc;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="btn-group my-2">
+                <button class="btn btn-info"
+                data-size="s"
+                >小</button>
+                <button class="btn btn-info"
+                data-size="m"
+                >中</button>
+                <button class="btn btn-info"
+                data-size="l"
+                >大</button>
+            </div>
+            <div class="my-2 hstack gap-2">
+                <div class="circle" style="background: black"></div>
+                <div class="circle" style="background: red"></div>
+                <div class="circle" style="background: green"></div>
+                <div class="circle" style="background: blue"></div>
+            </div>
+            <h1 id="target">Hello World</h1>
+        </div>
+        <script>
+            const btns=document.querySelectorAll(".btn")
+            const circles=document.querySelectorAll(".circle")
+            const target=document.querySelector("#target")
+
+            // console.log(btns);
+            for(let i=0; i<btns.length; i++){
+                btns[i].addEventListener("click", function(){
+                    // let size=this.textContent;
+                    let size=this.dataset.size;
+                    // console.log(size);
+                    switch(size){
+                        case "大":
+                        case "l":
+                            target.style.fontSize="1.8rem";
+                            break;
+                        case "中":
+                        case "m":
+                            target.style.fontSize="1.5rem";
+                            break;
+                        case "小":
+                        case "s":
+                            target.style.fontSize="1.2rem";
+                            break;
+                    }
+
+                })
+            }
+
+            for(let i=0;i<circles.length;i++){
+                circles[i].addEventListener("click", function(){
+                    // console.log("click");
+                    let color=this.style.background;
+                    // console.log(color);
+                    target.style.color=color;
+                })
+            }
+
+        </script>
+    </body>
+</html>
